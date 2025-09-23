@@ -57,13 +57,22 @@ It supports multiple HTTP injection points, live scan logging, scan speed and de
 | 6     | + Cookie                                             |
 | 7     | + POST Body (if POST selected)                       |
 
-## Screenshots
+## Screenshot
+<img width="1461" height="932" alt="Screenshot at 2025-09-23 23-37-38" src="https://github.com/user-attachments/assets/725e06f5-2ee6-40f8-8fe2-08e6ca02978f" />
 
-*(Add screenshots of the dashboard UI here)*
 
 ## Disclaimer
 
 For educational and authorized security testing only.  
 Use responsibly and **never scan sites without permission**.
+
+## If you want to donate for our project, then you can :) 💰
+##### Bitcoin(BTC) address: `bc1qrgakys3xn64g74422m3v6avhd7as3hgejsqs7d`
+##### Ethereum(ETH) address: `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
+##### Polygon(POL) address: `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
+##### BNB smart chain(BNB): `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
+## Created by
+INDIAN CYBER ARMY >>(WebDragon63)
+YT CHANNEL: [INDIAN CYBER ARMY](https://www.youtube.com/@webdragon63)
 
 ---
