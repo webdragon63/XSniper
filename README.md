@@ -35,7 +35,7 @@ It supports multiple HTTP injection points, live scan logging, scan speed and de
     ```
 2. **Run the tool:**
     ```bash
-    python xss_dashboard_depth_buttons.py
+    python xsniper.py
     ```
 3. **How to scan:**
     - Enter target URL.
