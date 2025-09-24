@@ -183,7 +183,7 @@ class XSSScanWorker(QThread):
 class XSSLiveDashboard(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("HiTec XSS Live Dashboard")
+        self.setWindowTitle("XSniper")
         self.setGeometry(100, 100, 1450, 900)
         self.setStyleSheet("""
             QMainWindow { background: #070a13; border: none; }
