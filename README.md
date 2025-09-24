@@ -58,7 +58,7 @@ It supports multiple HTTP injection points, live scan logging, scan speed and de
 | 7     | + POST Body (if POST selected)                       |
 
 ## Screenshot
-<img width="1461" height="932" alt="Screenshot at 2025-09-23 23-37-38" src="https://github.com/user-attachments/assets/725e06f5-2ee6-40f8-8fe2-08e6ca02978f" />
+<img width="1464" height="933" alt="Screenshot at 2025-09-25 00-44-48" src="https://github.com/user-attachments/assets/33ed01f4-c827-4267-af5a-e15348526b2f" />
 
 
 ## Disclaimer
