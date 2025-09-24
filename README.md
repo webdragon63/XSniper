@@ -65,7 +65,7 @@ It supports multiple HTTP injection points, live scan logging, scan speed and de
 
 For educational and authorized security testing only.  
 Use responsibly and **never scan sites without permission**.
-
+---
 ## If you want to donate for our project, then you can :) 💰
 ##### Bitcoin(BTC) address: `bc1qrgakys3xn64g74422m3v6avhd7as3hgejsqs7d`
 ##### Ethereum(ETH) address: `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
