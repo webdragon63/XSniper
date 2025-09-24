@@ -72,7 +72,6 @@ Use responsibly and **never scan sites without permission**.
 ##### Polygon(POL) address: `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
 ##### BNB smart chain(BNB): `0x8CC47B3d6B820D7c72b2778d3D684b430ec6BF38`
 ## Created by
-INDIAN CYBER ARMY >>(WebDragon63)
-YT CHANNEL: [INDIAN CYBER ARMY](https://www.youtube.com/@webdragon63)
-
+**INDIAN CYBER ARMY** >>[WebDragon63](https://github.com/webdragon63)\
+**YouTube Channel** [INDIAN CYBER ARMY](https://youtube.com/@webdragon63)
 ---
