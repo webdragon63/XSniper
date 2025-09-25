@@ -24,6 +24,10 @@ class XSSScanWorker(QThread):
         self.wordlist = wordlist
         self.delay = delay
         self.depth = depth
+        self._is_stopped = False
+
+    def stop(self):
+        self._is_stopped = True
 
     def run(self):
         vuln_types = set()
@@ -39,6 +43,10 @@ class XSSScanWorker(QThread):
         total = len(self.wordlist) * len(sections)
         for payload in self.wordlist:
             for name, func in sections:
+                if self._is_stopped:
+                    self.info_signal.emit("Scan stopped by user.")
+                    self.finished_signal.emit()
+                    return
                 self.log_signal.emit(f"Scanning {name} with payload: {payload}")
                 result = func(payload)
                 self.result_signal.emit(result)
@@ -232,7 +240,7 @@ class XSSLiveDashboard(QMainWindow):
 
         # Speed Control
         self.speedCombo = QComboBox()
-        self.speedCombo.addItems(["Fast", "Medium", "Slow"])
+        self.speedCombo.addItems(["Slow", "Medium", "Fast"])
         self.speedCombo.setCurrentIndex(0)
         controlLayout.addWidget(QLabel("Scan Speed:"))
         controlLayout.addWidget(self.speedCombo)
@@ -258,9 +266,18 @@ class XSSLiveDashboard(QMainWindow):
         controlLayout.addLayout(depthBtnsLayout)
         self.scanDepth = 1
 
+        # Start/Stop scan buttons together
+        btnsLayout = QHBoxLayout()
         self.scanBtn = QPushButton("Start Live XSS Scan")
         self.scanBtn.clicked.connect(self.startScan)
-        controlLayout.addWidget(self.scanBtn)
+        btnsLayout.addWidget(self.scanBtn)
+
+        self.stopBtn = QPushButton("Stop The Scan")
+        self.stopBtn.clicked.connect(self.stopScan)
+        self.stopBtn.setEnabled(False)
+        btnsLayout.addWidget(self.stopBtn)
+
+        controlLayout.addLayout(btnsLayout)
 
         self.statusLabel = QLabel("")
         self.statusLabel.setStyleSheet("color: #0fd9ff; font-size: 16px;")
@@ -367,9 +384,21 @@ class XSSLiveDashboard(QMainWindow):
         self.worker.log_signal.connect(self.logPanel.append)
         self.worker.result_signal.connect(self.addResult)
         self.worker.info_signal.connect(self.infoText.setText)
-        self.worker.finished_signal.connect(lambda: self.statusLabel.setText("Scan complete."))
+        self.worker.finished_signal.connect(self.scanFinished)
 
+        self.scanBtn.setEnabled(False)
+        self.stopBtn.setEnabled(True)
         self.worker.start()
+
+    def stopScan(self):
+        if self.worker and self.worker.isRunning():
+            self.worker.stop()
+            self.statusLabel.setText("Stopping scan...")
+
+    def scanFinished(self):
+        self.statusLabel.setText("Scan complete.")
+        self.scanBtn.setEnabled(True)
+        self.stopBtn.setEnabled(False)
 
     def addResult(self, res):
         i = self.resultsTable.rowCount()
